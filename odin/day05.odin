@@ -19,8 +19,8 @@ contains :: proc(arr: [dynamic]$T, val: T) -> bool {
 }
 
 main :: proc() {
-    // raw, ok := os.read_entire_file("../res/day05/test.data")
-    raw, ok := os.read_entire_file("../res/day05/base.data")
+    raw, ok := os.read_entire_file("../res/day05/test.data")
+    // raw, ok := os.read_entire_file("../res/day05/base.data")
 
     if !ok {
         fmt.println("Couldn't read data from file")
@@ -48,11 +48,13 @@ main :: proc() {
         } else {
             spl := strings.split(line, ",")
             valid := true
+            fmt.println(spl)
             loop: #reverse for n, i in spl {
                 for j := i - 1; j >= 0; j -= 1 {
+                    fmt.println("\t", n, spl[j], contains(rules[n], spl[j]))
                     if contains(rules[n], spl[j]) {
                         valid = false
-                        break loop
+                        // break loop
                     }
                 }
             }

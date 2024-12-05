@@ -1,4 +1,5 @@
 .git/*
+.wip/*
 ols.json
 *.sublime-project
 *.sublime-workspace
