@@ -53,9 +53,7 @@ count_cover :: proc(level: ^[dynamic][dynamic]MapCell) -> (res: int) {
     res = 0
     for row, y in level {
         for cell, x in row {
-            if cell.was_passed {
-                res += 1
-            }
+            if cell.was_passed do res += 1
         }
     }
     return
@@ -129,5 +127,5 @@ main :: proc() {
     for !guard.out do guard_move(&level, &guard)
     print_map(&level, &guard)
 
-    fmt.println("Count", count_cover(&level), 5444)
+    fmt.println("Count", count_cover(&level))
 }
