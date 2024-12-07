@@ -93,8 +93,8 @@ guard_move :: proc(level: ^[dynamic][dynamic]MapCell, guard: ^GuardData) {
 }
 
 main :: proc() {
-    // raw, ok := os.read_entire_file("../res/day06/test.data")
-    raw, ok := os.read_entire_file("../res/day06/base.data")
+    raw, ok := os.read_entire_file("../res/day06/test.data")
+    // raw, ok := os.read_entire_file("../res/day06/base.data")
 
     if !ok {
         fmt.println("Couldn't read data from file")
